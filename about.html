@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About — Mominur Islam Roby</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0d1220; --text:#e8eef8; --muted:#a6b0c3;
+    --teal:#21d4fd; --violet:#b721ff;
+    --border:rgba(255,255,255,.18);
+    --glass-bg: rgba(255,255,255,.07); --glass-bg-strong: rgba(255,255,255,.12);
+    --shadow: 0 12px 40px rgba(6,10,25,.35);
+  }
+  *{box-sizing:border-box} html,body{height:100%}
+  body{margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+       background:linear-gradient(180deg, #0b1020, #0f1530) fixed; color:var(--text)}
+  a{color:inherit; text-decoration:none}
+  .container{width:min(1100px,92vw); margin:0 auto}
+  .glass{backdrop-filter: blur(14px) saturate(160%); -webkit-backdrop-filter: blur(14px) saturate(160%);
+         background: var(--glass-bg); border: 1px solid var(--border); box-shadow: var(--shadow)}
+  header{position:sticky; top:0; z-index:50; background: rgba(13,18,32,.35); border-bottom: 1px solid rgba(255,255,255,.08); backdrop-filter: blur(12px) saturate(150%)}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:.9rem 0}
+  .brand{display:flex; gap:.6rem; align-items:center; font-weight:800}
+  .dot{width:10px;height:10px;border-radius:999px;background:var(--teal); box-shadow:0 0 18px var(--teal)}
+  .links{display:flex; gap:.6rem}
+  .links a{padding:.45rem .75rem; border-radius:.8rem; opacity:.9}
+  .links a:hover{opacity:1}
+  main{padding:4rem 0 5rem}
+  .title{font-size: clamp(2.1rem, 6vw, 3rem); font-weight:900; line-height:1.1; margin:0 0 1rem;
+         background:linear-gradient(90deg, var(--teal), var(--violet)); -webkit-background-clip:text; background-clip:text; color:transparent}
+  .lead{color:var(--muted); max-width:850px}
+  .grid{display:grid; gap:1.2rem}
+  .two{grid-template-columns: 1.1fr 1fr}
+  @media (max-width: 900px){ .two{grid-template-columns:1fr} }
+  .panel{border-radius:16px; padding:1.2rem}
+  .photo-wrap{display:grid; place-items:center; padding:1.2rem}
+  .photo{width:100%; max-width:360px; aspect-ratio:1/1; border-radius:20px; object-fit:cover; border:1px solid var(--border); box-shadow: var(--shadow)}
+  .sec-title{font-size:1.4rem; font-weight:800; margin:0 0 1rem}
+  .cards{display:grid; gap:1rem; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr))}
+  .card{border-radius:16px; padding:1rem}
+  .xicon{width:40px;height:40px;border-radius:12px; display:grid; place-items:center; background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.16); color:#8ed0ff; margin-right:.7rem}
+  .top{display:flex; align-items:center}
+  .when{color:#9bb0d0; font-size:.9rem; margin:.2rem 0}
+  .btn{display:inline-flex; align-items:center; gap:.5rem; padding:.65rem 1rem; border-radius:.9rem; border:1px solid rgba(255,255,255,.2)}
+  footer{border-top:1px solid rgba(255,255,255,.08); padding:2rem 0 3rem; text-align:center; color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="brand"><span class="dot"></span> <span>Mominur Islam Roby</span></div>
+    <nav class="links">
+      <a class="glass" href="index.html">Home</a>
+      <a class="glass" href="about.html">About Me</a>
+      <a class="glass" href="index.html#projects">Projects</a>
+      <a class="glass" href="index.html#skills">Skills</a>
+      <a class="glass" href="index.html#experience">Experience</a>
+      <a class="glass" href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <!-- Intro + Photo -->
+  <div class="grid two" style="margin-bottom:2rem">
+    <div class="panel glass">
+      <h1 class="title">About Me</h1>
+      <p class="lead">
+        I'm a motivated Computer Science & Engineering student at American International University–Bangladesh
+        with a strong foundation in software development, frontend engineering, and AI/ML.
+        I enjoy solving complex problems, building clean user interfaces, and exploring how AI can improve education through
+        personalization and adaptive learning experiences.
+      </p>
+      <div style="margin-top:1rem; display:flex; gap:.6rem; flex-wrap:wrap">
+        <span class="btn glass"><i class="ri-code-s-slash-line"></i> Software Developer</span>
+        <span class="btn glass"><i class="ri-layout-4-line"></i> Front End Developer</span>
+        <span class="btn glass"><i class="ri-cpu-line"></i> AI/ML Enthusiast</span>
+      </div>
+    </div>
+
+    <div class="panel glass photo-wrap">
+      <!-- Put your photo at assets/profile.jpg (or change the src) -->
+      <img class="photo" src="assets/profile.jpg" alt="Photo of Mominur Islam Roby">
+      <p style="color:var(--muted); margin:.6rem 0 0">
+    </div>
+  </div>
+
+  <!-- Academic Qualifications (boxed like Experience) -->
+  <section>
+    <h2 class="sec-title">Academic Qualifications</h2>
+    <div class="cards">
+      <article class="card glass">
+        <div class="top">
+          <div class="xicon"><i class="ri-graduation-cap-fill"></i></div>
+          <div>
+            <h3 style="margin:.2rem 0">BSc in Computer Science & Engineering</h3>
+            <div><b>American International University–Bangladesh (AIUB)</b></div>
+            <div class="when">Aug 2022 — Present · Dhaka, Bangladesh</div>
+          </div>
+        </div>
+        <p>Focus: software development, competitive programming, AI/ML.</p>
+      </article>
+
+      <article class="card glass">
+        <div class="top">
+          <div class="xicon"><i class="ri-book-2-fill"></i></div>
+          <div>
+            <h3 style="margin:.2rem 0">Higher Secondary Certificate (HSC)</h3>
+            <div><b>Dhaka College</b></div>
+            <div class="when">2020 — 2021 · Dhaka, Bangladesh</div>
+          </div>
+        </div>
+        <p>Science stream with emphasis on mathematics and physics.</p>
+      </article>
+
+      <article class="card glass">
+        <div class="top">
+          <div class="xicon"><i class="ri-school-fill"></i></div>
+          <div>
+            <h3 style="margin:.2rem 0">Secondary School Certificate (SSC)</h3>
+            <div><b>Thakurgaon Govt. Boys’ High School</b></div>
+            <div class="when">2011 — 2019 · Dhaka, Bangladesh</div>
+          </div>
+        </div>
+        <p>Strong fundamentals in mathematics and problem solving.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Extra CTA -->
+  <section style="margin-top:2rem">
+    <div class="panel glass" style="display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; align-items:center">
+      <div>
+        <h3 style="margin:.2rem 0">Want to collaborate?</h3>
+        <p style="margin:0; color:var(--muted)">I’m open to internships, freelance work, and research projects.</p>
+      </div>
+      <a class="btn glass" href="index.html#contact"><i class="ri-mail-send-line"></i> Contact Me</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© <span id="year"></span> Mominur Islam Roby · All rights reserved.</p>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

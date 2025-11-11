@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mominur Islam Roby — Portfolio</title>
+<meta name="description" content="Portfolio of Mominur Islam Roby — Software Developer, Front End Developer, AI/ML Enthusiast." />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0d1220; --bg-soft:#10172b;
+    --text:#e8eef8; --muted:#a6b0c3;
+    --teal:#21d4fd; --violet:#b721ff;
+    --border:rgba(255,255,255,.18);
+    --chip:#1a2540;
+    --glass-bg: rgba(255,255,255,.07);
+    --glass-bg-strong: rgba(255,255,255,.12);
+    --shadow: 0 12px 40px rgba(6,10,25,.35);
+  }
+  *{box-sizing:border-box} html,body{height:100%}
+  body{margin:0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+       background:linear-gradient(180deg, #0b1020, #0f1530) fixed; color:var(--text); line-height:1.6; overflow-x:hidden}
+  a{color:inherit; text-decoration:none}
+  .container{width:min(1200px,92vw); margin:0 auto}
+  .glass{backdrop-filter: blur(14px) saturate(160%); -webkit-backdrop-filter: blur(14px) saturate(160%);
+         background: var(--glass-bg); border: 1px solid var(--border); box-shadow: var(--shadow)}
+  .glass:hover{background: var(--glass-bg-strong)}
+  header{position:sticky; top:0; z-index:50; background: rgba(13,18,32,.35); border-bottom: 1px solid rgba(255,255,255,.08); backdrop-filter: blur(12px) saturate(150%)}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:.9rem 0}
+  .brand{display:flex; gap:.6rem; align-items:center; font-weight:800}
+  .dot{width:10px;height:10px;border-radius:999px;background:var(--teal); box-shadow:0 0 18px var(--teal)}
+  .links{display:flex; gap:.6rem}
+  .links a{padding:.45rem .75rem; border-radius:.8rem; opacity:.9}
+  .links a:hover{opacity:1}
+  .links a.glass{box-shadow:none}
+  .hero{position:relative; padding:8rem 0 5rem; overflow:hidden}
+  .hero .grid{display:grid; place-items:center; text-align:center}
+  .gname{font-size: clamp(2.8rem, 7.5vw, 5rem); font-weight:900; line-height:1.05; margin:0 0 .6rem;
+         background:linear-gradient(90deg, var(--teal), var(--violet)); -webkit-background-clip:text; background-clip:text; color:transparent;
+         letter-spacing:.2px; animation:pop .9s ease both .05s}
+  @keyframes pop{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}
+  .subtitle{color:var(--text); opacity:.95; display:flex; gap:.6rem; flex-wrap:wrap; justify-content:center;
+            font-weight:600; letter-spacing:.2px; margin:.2rem 0 1.2rem}
+  .subtitle .sep{opacity:.35}
+  .lead{color:var(--muted); max-width:850px; margin:0 auto 1.4rem; font-size:clamp(1.02rem,2.2vw,1.2rem)}
+  .actions{display:flex; gap:.8rem; justify-content:center; flex-wrap:wrap; margin:.6rem 0 1.2rem}
+  .btn{display:inline-flex; align-items:center; gap:.5rem; padding:.75rem 1.2rem; border-radius:1rem; font-weight:700; letter-spacing:.3px; color:var(--text); transition: all .25s ease}
+  .btn.glass{backdrop-filter: blur(12px) saturate(180%); -webkit-backdrop-filter: blur(12px) saturate(180%);
+             background: var(--glass-bg); border:1px solid var(--border); box-shadow:0 8px 30px rgba(0,0,0,.25)}
+  .btn.glass:hover{transform:translateY(-3px); background: var(--glass-bg-strong); border-color: rgba(255,255,255,.28);
+                   box-shadow: 0 12px 45px rgba(0,255,255,.28), 0 8px 40px rgba(0,0,0,.35)}
+  .btn.primary{border:1px solid rgba(0,255,255,.35); box-shadow:0 8px 30px rgba(0,255,255,.25)}
+  .btn.primary:hover{box-shadow:0 15px 50px rgba(0,255,255,.35), 0 8px 40px rgba(0,0,0,.35)}
+  .scroll{margin-top:1.2rem; color:var(--muted); font-size:.9rem}
+  .social{display:flex; gap:.75rem; justify-content:center; margin-top:.6rem}
+  .soc{width:40px;height:40px; display:grid; place-items:center; border-radius:12px}
+  .soc.glass:hover{transform:translateY(-2px)}
+  .blob{position:absolute; border-radius:999px; filter:blur(20px); opacity:.35; pointer-events:none; animation:float 12s ease-in-out infinite}
+  .b1{width:38vw;height:38vw; left:-10vw; top:10vh; background:radial-gradient(60% 60% at 50% 50%, #5133ff, transparent 70%)}
+  .b2{width:26vw;height:26vw; left:42vw; top:14vh; background:radial-gradient(60% 60% at 50% 50%, #1bc0ff, transparent 70%); animation-delay:.6s}
+  .b3{width:30vw;height:30vw; right:-8vw; top:28vh; background:radial-gradient(60% 60% at 50% 50%, #7a3cff, transparent 70%); animation-delay:1.2s}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+  canvas.particles{position:absolute; inset:0; z-index:-1}
+  section{padding:5rem 0}
+  .title-row{text-align:center; margin-bottom:2rem}
+  .title-row h2{margin:0 0 .4rem; font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight:900; letter-spacing:.3px;
+                background:linear-gradient(90deg, var(--text), #a8c7ff 40%, #c9a6ff); -webkit-background-clip:text; background-clip:text; color:transparent}
+  .title-row p{color:var(--muted); margin:0 auto; max-width:760px}
+  .grid{display:grid; gap:1.1rem}
+  .two{grid-template-columns:repeat(auto-fit, minmax(280px, 1fr))}
+  .three{grid-template-columns:repeat(auto-fit, minmax(280px, 1fr))}
+  .card{border-radius:16px; padding:1.1rem; transform:translateY(10px); opacity:0;
+        transition:transform .35s ease, opacity .35s ease, box-shadow .25s ease}
+  .card.glass{}
+  .card:hover{transform:translateY(-6px); box-shadow:0 20px 50px rgba(6,10,25,.55)}
+  .card.show{opacity:1; transform:none}
+  .thumb{aspect-ratio:16/9; border-radius:12px; margin-bottom:.8rem;
+         background:linear-gradient(130deg, #2a3659, #2b3250 60%)}
+  .badges{display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.6rem}
+  .badge{background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.16);
+         color:#cfe5ff; font-size:.75rem; padding:.25rem .55rem; border-radius:999px}
+  .group{border-radius:16px; padding:1rem}
+  .group.glass{}
+  .group h3{margin:.2rem 0 1rem; color:#9fd7ff}
+  .pills{display:flex; flex-wrap:wrap; gap:.5rem}
+  .pill{background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.16);
+        border-radius:999px; padding:.3rem .65rem; color:#bcd1ff; font-size:.82rem}
+  .xcard .top{display:flex; gap:.8rem; align-items:center}
+  .xicon{width:40px;height:40px;border-radius:12px; display:grid; place-items:center; background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.16); color:#8ed0ff}
+  .when{color:#9bb0d0; font-size:.9rem; margin:.15rem 0}
+  .org{color:#8ed0ff}
+  .contact-wrap{display:grid; grid-template-columns: 1.1fr 1fr; gap:1.2rem}
+  @media (max-width: 900px){ .contact-wrap{grid-template-columns:1fr} }
+  .panel{border-radius:16px; padding:1.2rem}
+  .panel.glass{}
+  .info-row{display:flex; gap:.8rem; align-items:flex-start; margin:.6rem 0}
+  .info-ico{width:38px;height:38px;border-radius:10px; display:grid; place-items:center; background: rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.16); color:#79d6ff}
+  .info-body b{display:block}
+  .form input, .form textarea{width:100%; padding:.9rem 1rem; border-radius:12px; border:1px solid rgba(255,255,255,.18); background: rgba(0,0,0,.25); color:var(--text)}
+  .form textarea{min-height:160px; resize:vertical}
+  .submit{margin-top:1rem}
+  footer{border-top:1px solid rgba(255,255,255,.08); padding:2rem 0 3rem; text-align:center; color:var(--muted)}
+  .credits{display:flex; gap:.6rem; align-items:center; justify-content:center}
+  .heart{color:#35d2ff}
+
+  /* ====== ADDED: nav hover glow (matching hero buttons) ====== */
+  .links a.glass{
+    transition: all .25s ease;
+    border:1px solid var(--border);
+    background: var(--glass-bg);
+    box-shadow:0 8px 24px rgba(0,0,0,.20);
+  }
+  .links a.glass:hover{
+    transform:translateY(-2px);
+    background:var(--glass-bg-strong);
+    border-color:rgba(255,255,255,.28);
+    box-shadow:0 12px 38px rgba(0,255,255,.22), 0 8px 34px rgba(0,0,0,.32);
+  }
+
+  /* ====== ADDED: project card glow on hover (same vibe) ====== */
+  .card.glass{transition:transform .35s ease, opacity .35s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease}
+  .card.glass:hover{
+    background:var(--glass-bg-strong);
+    border-color:rgba(255,255,255,.28);
+    box-shadow:0 22px 55px rgba(6,10,25,.55), 0 12px 40px rgba(0,255,255,.20);
+  }
+
+  /* ====== ADDED: tiny project action buttons (Demo/GitHub) ====== */
+  .proj-actions{display:flex; gap:.5rem; flex-wrap:wrap; margin:.75rem 0 .1rem}
+  .btn.sm{padding:.55rem .9rem; border-radius:.8rem; font-weight:700; font-size:.92rem}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="brand"><span class="dot"></span> <span>Mominur Islam Roby</span></div>
+    <nav class="links">
+      <a class="glass" href="about.html">About Me</a>
+      <a class="glass" href="#projects">Projects</a>
+      <a class="glass" href="#skills">Skills</a>
+      <a class="glass" href="#experience">Experience</a>
+      <a class="glass" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <canvas class="particles" id="particles"></canvas>
+
+  <div class="container grid">
+    <h1 class="gname">Mominur Islam Roby</h1>
+    <div class="subtitle">
+      <span>Software Developer</span><span class="sep">|</span>
+      <span>Front End Developer</span><span class="sep">|</span>
+      <span>AI/ML Enthusiast</span>
+    </div>
+    <p class="lead">Computer Science & Engineering student specializing in React, competitive programming, and AI/ML. Passionate about building fast, user-focused solutions.</p>
+    <div class="actions">
+      <a class="btn glass primary" href="#contact"><i class="ri-mail-send-line"></i> Get In Touch</a>
+      <a class="btn glass" href="#projects"><i class="ri-window-line"></i> View Projects</a>
+      <a class="btn glass" href="CV.pdf" download><i class="ri-download-2-line"></i> Download CV</a>
+    </div>
+    <div class="scroll">Scroll Down ↓</div>
+    <div class="social">
+      <a class="soc glass" href="https://github.com/MominurIslamRoby" target="_blank" aria-label="GitHub"><i class="ri-github-line"></i></a>
+      <a class="soc glass" href="https://www.linkedin.com/in/mominur-islam-roby" target="_blank" aria-label="LinkedIn"><i class="ri-linkedin-line"></i></a>
+       <a class="soc glass" href="https://www.facebook.com/mominur.roby.00000007/" target="_blank" aria-label="facebook"><i class="ri-facebook-line"></i></a>
+      <a class="soc glass" href="mailto:mominurislamroby2017@gmail.com" aria-label="Email"><i class="ri-mail-line"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="title-row">
+      <h2>Featured <span style="background:linear-gradient(90deg,var(--teal),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent">Projects</span></h2>
+      <p>A selection of recent projects showcasing my skills.</p>
+    </div>
+
+    <div class="grid two">
+      <article class="card glass">
+        <!-- Image added -->
+        <div class="thumb" style="
+          background:
+            linear-gradient(180deg, rgba(0,0,0,0.22), rgba(0,0,0,0.35)),
+            url('assets/calculator.png') center / cover no-repeat;
+        "></div>
+        <h3>Scientific Calculator</h3>
+        <p>Fully functional scientific calculator with responsive design and keyboard support.</p>
+        <!-- ADDED: actions -->
+        <div class="proj-actions">
+          <a class="btn glass sm" href="https://mominurislamroby.github.io/scientific-calculator/" target="_blank" aria-label="Scientific Calculator Demo"><i class="ri-external-link-line"></i> Demo</a>
+          <a class="btn glass sm" href="https://github.com/MominurIslamRoby/scientific-calculator" target="_blank" aria-label="Scientific Calculator Repository"><i class="ri-github-line"></i> GitHub</a>
+        </div>
+        <div class="badges"><span class="badge">React</span><span class="badge">Vite</span><span class="badge">Tailwind</span><span class="badge">GitHub Pages</span></div>
+      </article>
+
+      <article class="card glass">
+        <!-- Image added -->
+        <div class="thumb" style="
+          background:
+            linear-gradient(180deg, rgba(0,0,0,0.22), rgba(0,0,0,0.35)),
+            url('assets/travel.png') center / cover no-repeat;
+        "></div>
+        <h3>Smart Travel Application</h3>
+        <p>AI-powered planning with personalized itineraries and recommendations.</p>
+        <!-- ADDED: actions -->
+        <div class="proj-actions">
+          <a class="btn glass sm" href="#" target="_blank" aria-label="Smart Travel Demo"><i class="ri-external-link-line"></i> Demo</a>
+          <a class="btn glass sm" href="#" target="_blank" aria-label="Smart Travel Repository"><i class="ri-github-line"></i> GitHub</a>
+        </div>
+        <div class="badges"><span class="badge">Java</span><span class="badge">AI/ML</span><span class="badge">Algorithm Design</span><span class="badge">Data Structures</span></div>
+      </article>
+
+      <article class="card glass">
+  <!-- Added image background for AI in Education Research -->
+  <div class="thumb" style="
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.35)),
+      url('assets/gpt.png') center / cover no-repeat;
+  "></div>
+  <h3>AI in Education Research</h3>
+  <p>Adaptive and ethical learning experiments using ML.</p>
+  <!-- ADDED: actions -->
+  <div class="proj-actions">
+    <a class="btn glass sm" href="#" target="_blank" aria-label="AI in Education Demo"><i class="ri-external-link-line"></i> Demo</a>
+    <a class="btn glass sm" href="#" target="_blank" aria-label="AI in Education Repository"><i class="ri-github-line"></i> GitHub</a>
+  </div>
+  <div class="badges">
+    <span class="badge">Python</span>
+    <span class="badge">AWS AI</span>
+    <span class="badge">ML</span>
+    <span class="badge">GPT</span>
+  </div>
+</article>
+
+
+      <article class="card glass">
+        <!-- Image added -->
+        <div class="thumb" style="
+          background:
+            linear-gradient(180deg, rgba(0,0,0,0.22), rgba(0,0,0,0.35)),
+            url('assets/website.png') center / cover no-repeat;
+        "></div>
+        <h3>Modern Web Portfolio</h3>
+        <p>Interactive 3D portfolio with smooth animations and responsive UI.</p>
+        <!-- ADDED: actions -->
+        <div class="proj-actions">
+          <a class="btn glass sm" href="#" target="_blank" aria-label="Portfolio Demo"><i class="ri-external-link-line"></i> Demo</a>
+          <a class="btn glass sm" href="#" target="_blank" aria-label="Portfolio Repository"><i class="ri-github-line"></i> GitHub</a>
+        </div>
+        <div class="badges"><span class="badge">React</span><span class="badge">Vite</span><span class="badge">Tailwind</span><span class="badge">Three.js</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="title-row">
+      <h2>Skills & <span style="background:linear-gradient(90deg,var(--teal),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent">Technologies</span></h2>
+      <p>A comprehensive toolkit of modern technologies and frameworks.</p>
+    </div>
+
+    <div class="grid three">
+      <div class="group glass card show">
+        <h3>Programming Languages</h3>
+        <div class="pills"><span class="pill">Java</span><span class="pill">C++</span><span class="pill">C#</span><span class="pill">Python</span><span class="pill">JavaScript</span><span class="pill">TypeScript</span></div>
+      </div>
+      <div class="group glass card show">
+        <h3>Frontend Development</h3>
+        <div class="pills"><span class="pill">React</span><span class="pill">Vite</span><span class="pill">Tailwind CSS</span><span class="pill">HTML/CSS</span><span class="pill">Responsive Design</span><span class="pill">Java Swing</span></div>
+      </div>
+      <div class="group glass card show">
+        <h3>AI & Cloud</h3>
+        <div class="pills"><span class="pill">AWS AI/ML Services</span><span class="pill">Machine Learning</span><span class="pill">AI Ethics</span><span class="pill">Algorithm Design</span><span class="pill">Data Structures</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="title-row">
+      <h2>Experience & <span style="background:linear-gradient(90deg,var(--teal),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent">Leadership</span></h2>
+      <p>Professional journey and community involvement.</p>
+    </div>
+
+    <div class="grid two">
+      <article class="card glass xcard">
+        <div class="top"><div class="xicon"><i class="ri-graduation-cap-fill"></i></div>
+          <div><h3 style="margin:.1rem 0">Undergraduate Student</h3><a class="org" href="#">American International University–Bangladesh</a><div class="when">Aug 2022 — Present</div></div>
+        </div>
+        <p>Pursuing BSc. in CSE with focus on AI, Machine Learning, and Software Development.</p>
+      </article>
+
+      <article class="card glass xcard">
+        <div class="top"><div class="xicon"><i class="ri-briefcase-3-fill"></i></div>
+          <div><h3 style="margin:.1rem 0">Managing Director</h3><a class="org" href="#">Ataur Battery House & Auto Parts Centre</a><div class="when">Feb 2019 — Present · Thakurgaon</div></div>
+        </div>
+        <p>Managing operations, maintaining quality standards, and expanding services while building customer trust.</p>
+      </article>
+
+      <article class="card glass xcard">
+        <div class="top"><div class="xicon"><i class="ri-camera-3-fill"></i></div>
+          <div><h3 style="margin:.1rem 0">Freelance Photographer</h3><div class="when">Apr 2017 — Present · Dhaka</div></div>
+        </div>
+        <p>Event and portrait photography; former Event Manager at AIUB Photography Club.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="title-row">
+      <h2>Get In <span style="background:linear-gradient(90deg,var(--teal),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent">Touch</span></h2>
+      <p>Have a project in mind? Let’s work together to create something amazing.</p>
+    </div>
+
+    <div class="contact-wrap">
+      <div class="panel glass">
+        <h3 style="margin-top:0">Contact Information</h3>
+        <div class="info-row"><div class="info-ico"><i class="ri-mail-line"></i></div><div class="info-body"><b>Email</b><a href="mailto:mominurislamroby2017@gmail.com">mominurislamroby2017@gmail.com</a></div></div>
+        <div class="info-row"><div class="info-ico"><i class="ri-phone-line"></i></div><div class="info-body"><b>Phone</b><span>+880 1793146103</span></div></div>
+        <div class="info-row"><div class="info-ico"><i class="ri-map-pin-line"></i></div><div class="info-body"><b>Location</b><span>Dhaka, Bangladesh</span></div></div>
+      </div>
+
+      <div class="panel glass">
+        <form class="form" action="https://formspree.io/f/your-id" method="POST">
+          <div style="display:grid; gap:.8rem">
+            <input name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input name="subject" placeholder="Subject">
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button class="btn glass primary submit" type="submit">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="credits">Made with <span class="heart">❤</span> by <b>Mominur Islam Roby</b></div>
+    <p>© <span id="year"></span> All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); }})},{threshold:.12});
+  document.querySelectorAll('.card:not(.show)').forEach(el=>io.observe(el));
+  const c = document.getElementById('particles'); const ctx = c.getContext('2d'); const DPR = Math.min(devicePixelRatio||1,2);
+  function size(){ c.width=innerWidth*DPR; c.height=innerHeight*DPR; } size(); addEventListener('resize', size, {passive:true});
+  const N=80,d=[]; for(let i=0;i<N;i++) d.push({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*2+.5,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25});
+  (function loop(){ ctx.clearRect(0,0,c.width,c.height); ctx.fillStyle='rgba(255,255,255,.5)';
+    for(const p of d){ p.x+=p.vx; p.y+=p.vy; if(p.x<0||p.x>c.width)p.vx*=-1; if(p.y<0||p.y>c.height)p.vy*=-1;
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.r*DPR, 0, Math.PI*2); ctx.fill(); } requestAnimationFrame(loop); })();
+</script>
+</body>
+</html>
